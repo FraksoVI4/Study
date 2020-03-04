@@ -18,7 +18,7 @@
         </DockPanel>
         
         <DockPanel Grid.Row="1"  Background="#FF505050">
-            <Label x:Name="StartTimerLabel" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"  Content="18 дней 18 часов и 17 минут до старта марафона!" Foreground="White" FontFamily="Open Sans"/>
+            <Label x:Name="StartTimerLabel" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"  Foreground="White" FontFamily="Open Sans"/>
 
         </DockPanel>
     </Grid>
