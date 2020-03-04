@@ -21,41 +21,40 @@ namespace WpfApp4
     /// </summary>
     public partial class MainWindow : Window
     {
-        DateTime date = new DateTime(2020, 3, 5, 17, 35, 0);
-        Timer startTimer;
 
+        DateTime datetime = new DateTime(2020, 3, 4, 18, 6, 0);
+        Timer timer;
         public MainWindow()
-        {
+        {           
             InitializeComponent();
-            MainFrame.Navigate(new MainPage(MainFrame));
-
-            if (date.Subtract(DateTime.Now).TotalSeconds >= 1)
+            if (datetime.Subtract(DateTime.Now).TotalSeconds <= 0)
             {
-                startTimer = new Timer(date.Subtract(DateTime.Now).TotalSeconds * 1000);
-                startTimer.Interval = 1 * 1000;
-                startTimer.Elapsed += Update;
-                startTimer.Start();
+                StartTimerLabel.Content = "0 дней 0 часов и 0 минут до старта марафона!";
             }
             else
             {
-                MessageBox.Show("Соревнования начались!");
+                timer = new Timer(datetime.Subtract(DateTime.Now).TotalSeconds * 1000);
+                timer.Interval = 1 * 1000;
+                timer.Elapsed += Timer_Elapsed;
+                timer.Start();
             }
+            MainFrame.Navigate(new MainPage(MainFrame));
+
         }
 
-        public void Update(object sender, ElapsedEventArgs e)
+        private void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            Dispatcher.BeginInvoke(new Action(
-                () => {
-                    var t = date.Subtract(DateTime.Now);
-                    StartTimerLabel.Content = $"{t.Days} дней {t.Hours} часов {t.Minutes} минут и {t.Seconds} секунд до старта марафона!";
+            Dispatcher.BeginInvoke(new Action( () => {
+                var timeSpan = datetime.Subtract(DateTime.Now);
+                StartTimerLabel.Content = $"{timeSpan.Days} дней {timeSpan.Hours} часов и {timeSpan.Minutes} минут до старта марафона!";
+                if (timeSpan.TotalSeconds <= 0)
+                {
+                    timer.Dispose();
+                    MessageBox.Show("Марафон начался!");
+                }
 
-                    if(t.TotalSeconds <= 1)
-                    {
-                        startTimer.Dispose();
-                        MessageBox.Show("Соревнования начались!");
-                    }
-                    }
-                ));
+            }) );
+            
         }
     }
 }
