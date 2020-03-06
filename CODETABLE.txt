@@ -1,0 +1,47 @@
+CREATE TABLE Gender(
+GenderId int CONSTRAINT PK_GenderId PRIMARY KEY IDENTITY,
+Gender nvarchar(30) not null UNIQUE
+)
+
+CREATE TABLE CitizenType(
+CitizenTypeId int CONSTRAINT PK_CitizenTypeId PRIMARY KEY IDENTITY,
+CitizenType nvarchar(60) not null UNIQUE
+)
+
+CREATE TABLE Education(
+EducationId int CONSTRAINT PK_EducationId PRIMARY KEY IDENTITY,
+Education nvarchar(60) unique not null
+)
+
+CREATE TABLE SocialStatus(
+SocialStatusId int CONSTRAINT PK_SocialStatusId PRIMARY KEY IDENTITY,
+SocialStatus nvarchar(50) not null unique
+)
+CREATE TABLE Respondent(
+RespondentId int CONSTRAINT PK_RespondentId PRIMARY KEY IDENTITY,
+FirstLastName nvarchar(100) not null,
+GenderId int FOREIGN KEY REFERENCES Gender (GenderId),
+SocialStatusId int FOREIGN KEY REFERENCES SocialStatus (SocialStatusId),
+EducationId int FOREIGN KEY REFERENCES Education (EducationId),
+CitizenTypeId int FOREIGN KEY REFERENCES CitizenType (CitizenTypeId)
+)
+
+CREATE TABLE Answer(
+AnswerId int CONSTRAINT PK_AnswerId PRIMARY KEY IDENTITY,
+Answer nvarchar(200) not null
+)
+
+CREATE TABLE Theme(
+ThemeId int CONSTRAINT PK_ThemeId PRIMARY KEY IDENTITY,
+Theme nvarchar(50) not null
+)
+
+CREATE TABLE Question(
+QuestionId int CONSTRAINT PK_QuestionId PRIMARY KEY IDENTITY,
+Question nvarchar(200) not null,
+ThemeId int FOREIGN KEY REFERENCES Theme (ThemeId)
+)
+
+CREATE TABLE SurveyPosition(
+SurveyPositionId int CONSTRAINT PK_
+)
