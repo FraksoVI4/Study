@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -40,6 +41,16 @@ namespace WpfApp4
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             Mainframe.Navigate(new Page1(Mainframe));
+        }
+
+        private void SecondPageLogin_Click(object sender, RoutedEventArgs e)
+        {
+            var dialog = new OpenFileDialog();
+            if (dialog.ShowDialog() == true)
+            {               
+                BitmapImage image = new BitmapImage(new Uri(dialog.FileName));
+                SecondPageImage.Source = image;
+            }
         }
     }
 }

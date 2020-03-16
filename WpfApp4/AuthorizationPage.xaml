@@ -44,7 +44,7 @@
                     <TextBox Grid.Row="0" Grid.Column="2"/>
                     <TextBox Grid.Row="2" Grid.Column="2"/>
                     <StackPanel Grid.Row="3" Grid.Column="2" Orientation="Horizontal">
-                        <Button Content="Login" Width="70" Height="35" VerticalAlignment="Bottom" HorizontalAlignment="Right" x:Name="LoginBtn" Click="LoginBtn_Click"/>
+                        <Button IsDefault="True" Content="Login" Width="70" Height="35" VerticalAlignment="Bottom" HorizontalAlignment="Right" x:Name="LoginBtn" Click="LoginBtn_Click"/>
                         <Button Content="Cancel" Width="70" Height="35" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="Button_Click_1" Margin="40, 0, 0, 0"/>
                     </StackPanel>
                 </Grid>

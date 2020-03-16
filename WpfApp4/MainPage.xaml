@@ -18,6 +18,7 @@
             <Label  HorizontalAlignment="Center" FontSize="14" Content="Москва, Россия" FontStyle="Oblique" Foreground="#FFB9B5B5" FontFamily="Open Sans"/>
             <Label Content="среда 21 октября 2018" FontSize="14" HorizontalAlignment="Center" FontStyle="Oblique" Foreground="#FFBCBCBC" FontFamily="Open Sans"/>
         </StackPanel>
+        
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="7*"/>

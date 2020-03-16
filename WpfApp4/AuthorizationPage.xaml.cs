@@ -40,9 +40,9 @@ namespace WpfApp4
         private void LoginBtn_Click(object sender, RoutedEventArgs e)
         {
             var window = new RoleForAuthorizationWindow();
-            if(window.ShowDialog() == true)
+            if (window.ShowDialog() == true)
             {
-
+                MessageBox.Show(window.Role);
             }
         }
     }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +20,29 @@ namespace WpfApp4
     /// </summary>
     public partial class RoleForAuthorizationWindow : Window
     {
+        public string Role;
         public RoleForAuthorizationWindow()
         {
             InitializeComponent();
         }
+
+        private void RunnerBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Role = "Runner";
+            this.DialogResult = true;
+        }
+
+        private void CoordinatorBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Role = "Coordinator";
+            this.DialogResult = true;
+        }
+
+        private void AdminBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Role = "Admin";
+            this.DialogResult = true;
+        }
+
     }
 }
