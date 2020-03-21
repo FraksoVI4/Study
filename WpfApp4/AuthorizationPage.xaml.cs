@@ -20,6 +20,7 @@ namespace WpfApp4
     /// </summary>
     public partial class Page1 : Page
     {
+        Context context = new Context();
         private Frame Mainframe;
         public Page1(Frame frame)
         {
@@ -42,7 +43,18 @@ namespace WpfApp4
             var window = new RoleForAuthorizationWindow();
             if (window.ShowDialog() == true)
             {
-                MessageBox.Show(window.Role);
+               if (window.Role == "Runner")
+                {
+                    var runner = context.Runners.Where(o => o.Email == Login.Text && o.Password == Password.Password).SingleOrDefault();
+                    if (runner != null)
+                    {
+                        MessageBox.Show($"{runner.FirstName} {runner.LastName}");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Неправильный логин или пароль.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                }
             }
         }
     }

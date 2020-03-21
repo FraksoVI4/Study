@@ -39,7 +39,6 @@ namespace WpfApp4
                 timer.Start();
             }
             MainFrame.Navigate(new MainPage(MainFrame));
-
         }
 
         private void Timer_Elapsed(object sender, ElapsedEventArgs e)

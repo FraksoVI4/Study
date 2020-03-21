@@ -52,5 +52,10 @@ namespace WpfApp4
                 SecondPageImage.Source = image;
             }
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Mainframe.Navigate(new RegistrationPage(Mainframe));
+        }
     }
 }
