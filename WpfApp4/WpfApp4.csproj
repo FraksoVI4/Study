@@ -68,6 +68,9 @@
     <Compile Include="Context\Context.cs" />
     <Compile Include="Model\Person.cs" />
     <Compile Include="Model\Runner.cs" />
+    <Compile Include="RegistrationConfirm.xaml.cs">
+      <DependentUpon>RegistrationConfirm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RegistrationPage.xaml.cs">
       <DependentUpon>RegistrationPage.xaml</DependentUpon>
     </Compile>
@@ -97,6 +100,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="AuthorizationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RegistrationConfirm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -29,7 +29,7 @@
             <Label Content="Marathon Skills 2018" HorizontalAlignment="Center" FontSize="26" VerticalAlignment="Center" Margin="25, 0"  Foreground="#FFF0F0F0" FontStyle="Italic" FontWeight="Bold" FontFamily="Open Sans"/>
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.Row="1" VerticalAlignment="Bottom">
-            <Image x:Name="SecondPageImage" Source="Resources\62876915_5080afcc1177.jpg" Width="100" Margin="10"/>
+            
             <Button Content="Login"   Width="80" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="10" x:Name="SecondPageLogin" Click="SecondPageLogin_Click"/>
         </StackPanel>
         

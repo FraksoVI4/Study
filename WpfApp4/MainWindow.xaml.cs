@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp4.Model;
 
 namespace WpfApp4
 {
@@ -21,8 +22,8 @@ namespace WpfApp4
     /// </summary>
     public partial class MainWindow : Window
     {
-
-        DateTime datetime = new DateTime(2020, 3, 4, 18, 6, 0);
+        private static Runner _runner;
+        DateTime datetime = new DateTime(2020, 3, 18, 14, 0, 0);
         Timer timer;
         public MainWindow()
         {           
@@ -54,6 +55,35 @@ namespace WpfApp4
 
             }) );
             
+        }
+        public static void Authorize(Runner runner)
+        {
+            if (_runner != null)
+            {
+                MessageBox.Show("Вы уже авторизованы", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                _runner = runner;
+                MessageBox.Show($"{runner.FirstName} {runner.LastName}, вы вошли в систему.");
+            }            
+
+        }
+        public static void LogOut()
+        {
+            _runner = null;
+            MessageBox.Show("Вы вышли из системы", "Оповещение", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+        public static bool IsAuthorized()
+        {
+            if (_runner != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

@@ -36,5 +36,10 @@ namespace WpfApp4
         {
             Mainframe.Navigate(new SecondPage(Mainframe));
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Mainframe.Navigate(new Page1(Mainframe));
+        }
     }
 }

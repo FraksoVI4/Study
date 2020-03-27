@@ -45,12 +45,13 @@ namespace WpfApp4
 
         private void SecondPageLogin_Click(object sender, RoutedEventArgs e)
         {
-            var dialog = new OpenFileDialog();
-            if (dialog.ShowDialog() == true)
-            {               
-                BitmapImage image = new BitmapImage(new Uri(dialog.FileName));
-                SecondPageImage.Source = image;
-            }
+            Mainframe.Navigate(new Page1(Mainframe));
+            //var dialog = new OpenFileDialog();
+            //if (dialog.ShowDialog() == true)
+            //{               
+            //    BitmapImage image = new BitmapImage(new Uri(dialog.FileName));
+            //    SecondPageImage.Source = image;
+            //}
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)

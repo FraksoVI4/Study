@@ -48,7 +48,8 @@ namespace WpfApp4
                     var runner = context.Runners.Where(o => o.Email == Login.Text && o.Password == Password.Password).SingleOrDefault();
                     if (runner != null)
                     {
-                        MessageBox.Show($"{runner.FirstName} {runner.LastName}");
+                        MainWindow.Authorize(runner);
+                        
                     }
                     else
                     {

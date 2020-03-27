@@ -1,0 +1,23 @@
+﻿<Page x:Class="WpfApp4.RegistrationConfirm"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp4"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800" Background="White"
+      Title="RegistrationConfirm">
+
+    <Grid>
+        <Grid.RowDefinitions >
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="6*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Grid.ColumnSpan="4"   Orientation="Horizontal" Background="#FF505050">
+            <Button Content="Назад"  Width="80" Height="40" HorizontalAlignment="Left" Margin="10" Click="Button_Click"/>
+            <Label Content="Marathon Skills 2018" HorizontalAlignment="Center" FontSize="26" VerticalAlignment="Center" Margin="25, 0"  Foreground="#FFF0F0F0" FontStyle="Italic" FontWeight="Bold" FontFamily="Open Sans"/>
+            
+        </StackPanel>
+        <Button Content="Logout" Width="80" Height="40" Grid.Row="0" HorizontalAlignment="Right" Margin="10"/>
+    </Grid>
+</Page>

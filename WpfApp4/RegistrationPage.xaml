@@ -34,11 +34,11 @@
                         <Label Content="Фамилия: " />
                     </StackPanel>
                     <StackPanel>
-                        <TextBox Width="150" Margin="5"/>
-                        <TextBox  Margin="5"/>
-                        <TextBox Margin="5"/>
-                        <TextBox Margin="5"/>
-                        <TextBox Margin="5"/>
+                        <TextBox Width="150" Margin="5" x:Name="EmailBox"/>
+                        <PasswordBox  Margin="5" x:Name="FirstPasswordBox" />
+                        <PasswordBox Margin="5" x:Name="SecondPasswordBox"  />
+                        <TextBox Margin="5" x:Name="FirstName" />
+                        <TextBox Margin="5" x:Name="LastName" />
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Grid.Column="1" Orientation="Horizontal">
@@ -48,12 +48,12 @@
                         <Label Content="Страна: "/>
                     </StackPanel>
                     <StackPanel>
-                        <ComboBox Text="Пол"  Width="100" Margin="3">
+                        <ComboBox Text="Пол"  Width="100" Margin="3" x:Name="GenderBox" SelectedIndex="0">
                             <TextBlock>Мужской</TextBlock>
                             <TextBlock>Женский</TextBlock>
                         </ComboBox>
                         <DatePicker Name="datePicker" IsDropDownOpen="True" SelectedDateFormat="Short" Margin="3" />
-                        <ComboBox Text="Страна" Width="100" Margin="3">
+                        <ComboBox Text="Страна" Width="100" Margin="3" x:Name="CountryBox" SelectedIndex="0">
                             <TextBlock>Russia</TextBlock>
                             <TextBlock>Ukraine</TextBlock>
                             <TextBlock>Kazakhstan</TextBlock>
@@ -67,7 +67,7 @@
 
             </Grid>
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                <Button Content="Регистрация" Margin="10" Width="100" Height="20"/>
+                <Button Content="Регистрация" Margin="10" Width="100" Height="20" x:Name="RegistrationButton" Click="RegistrationButton_Click"/>
                 <Button Content="Отмена" Width="100" Height="20" Click="Button_Click_1"/>
             </StackPanel>
 
