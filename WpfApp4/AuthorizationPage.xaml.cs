@@ -56,6 +56,18 @@ namespace WpfApp4
                         MessageBox.Show("Неправильный логин или пароль.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 }
+               else if (window.Role == "Admin")
+                {
+                    var admin = context.Admins.Where(o => o.Email == Login.Text && o.Password == Password.Password).SingleOrDefault();
+                    if (admin != null)
+                    {
+                        MainWindow.Authorize(admin);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Неправильный логин или пароль.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                }
             }
         }
     }

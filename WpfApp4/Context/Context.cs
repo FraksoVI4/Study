@@ -16,6 +16,7 @@ namespace WpfApp4
         }
         public virtual DbSet<Person> People { get; set; }
         public virtual DbSet<Runner> Runners { get; set; }
+        public virtual DbSet<Admin>  Admins { get; set; }
         
     }
 }

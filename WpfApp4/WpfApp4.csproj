@@ -66,6 +66,12 @@
       <DependentUpon>AuthorizationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Context\Context.cs" />
+    <Compile Include="Migrations\202003211340381_InitialCreate.cs" />
+    <Compile Include="Migrations\202003211340381_InitialCreate.designer.cs">
+      <DependentUpon>202003211340381_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Admin.cs" />
     <Compile Include="Model\Person.cs" />
     <Compile Include="Model\Runner.cs" />
     <Compile Include="RegistrationConfirm.xaml.cs">
@@ -134,6 +140,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Migrations\202003211340381_InitialCreate.resx">
+      <DependentUpon>202003211340381_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

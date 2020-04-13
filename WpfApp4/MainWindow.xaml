@@ -18,7 +18,14 @@
         </DockPanel>
         
         <DockPanel Grid.Row="1"  Background="#FF505050">
-            <Label x:Name="StartTimerLabel" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"  Foreground="White" FontFamily="Open Sans"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label x:Name="StartTimerLabel" HorizontalAlignment="Center" Grid.ColumnSpan="2" VerticalAlignment="Center" FontSize="18"  Foreground="White" FontFamily="Open Sans" Grid.Column="0"/>
+                <Button x:Name="LogOutButton" Width="100" Height="40" HorizontalAlignment="Right" Margin="5" Content="Logout" Visibility="{Binding LogOutVisibility}" Grid.Column="1"  Click="LogOutButton_Click" />
+            </Grid>
 
         </DockPanel>
     </Grid>

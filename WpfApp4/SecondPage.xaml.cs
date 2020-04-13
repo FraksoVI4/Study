@@ -45,7 +45,7 @@ namespace WpfApp4
 
         private void SecondPageLogin_Click(object sender, RoutedEventArgs e)
         {
-            Mainframe.Navigate(new Page1(Mainframe));
+            Mainframe.Navigate(new Page1(Mainframe)); 
             //var dialog = new OpenFileDialog();
             //if (dialog.ShowDialog() == true)
             //{               
