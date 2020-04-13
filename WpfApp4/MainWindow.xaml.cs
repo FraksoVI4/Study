@@ -26,7 +26,7 @@ namespace WpfApp4
     {
         private static Runner _runner;
         private static Admin _admin;
-        DateTime datetime = new DateTime(2020, 3, 18, 14, 0, 0);
+        DateTime datetime = new DateTime(2020, 5, 18, 14, 0, 0);
         Timer timer;
         private Visibility visibility;
 
@@ -60,10 +60,18 @@ namespace WpfApp4
             }
             else
             {
-                timer = new Timer(datetime.Subtract(DateTime.Now).TotalSeconds * 1000);
-                timer.Interval = 1 * 1000;
-                timer.Elapsed += Timer_Elapsed;
-                timer.Start();
+                var sub = datetime.Subtract(DateTime.Now);
+                if (sub.TotalDays > 10)
+                {
+                    StartTimerLabel.Content = $"{sub.TotalDays:0} дней до старта марафона!";
+                }
+                else
+                {
+                    timer = new Timer(sub.TotalSeconds * 1000);
+                    timer.Interval = 1 * 1000;
+                    timer.Elapsed += Timer_Elapsed;
+                    timer.Start();
+                }
             }
             MainFrame.Navigate(new MainPage(MainFrame));
         }
