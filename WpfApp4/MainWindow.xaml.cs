@@ -24,6 +24,20 @@ namespace WpfApp4
     /// </summary>
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
+        private int authTry;
+        public int AuthTry
+        {
+            get
+            {
+               return authTry;
+            }
+            set
+            {
+                authTry = value;
+                OnPropertyChanged("AuthTry");
+            }
+        }
+        
         private static Runner _runner;
         private static Admin _admin;
         DateTime datetime = new DateTime(2020, 5, 18, 14, 0, 0);
@@ -53,6 +67,7 @@ namespace WpfApp4
         {           
             InitializeComponent();
             DataContext = this;
+            AuthTry = 3;
             LogOutVisibility = Visibility.Hidden;
             if (datetime.Subtract(DateTime.Now).TotalSeconds <= 0)
             {

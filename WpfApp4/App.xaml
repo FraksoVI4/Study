@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:WpfApp4"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <local:LoginEnabledConverter x:Key="LgnEnableConverter"/>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

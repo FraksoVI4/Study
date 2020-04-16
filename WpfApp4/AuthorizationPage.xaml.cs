@@ -19,13 +19,14 @@ namespace WpfApp4
     /// Логика взаимодействия для Page1.xaml
     /// </summary>
     public partial class Page1 : Page
-    {
+    {      
         Context context = new Context();
         private Frame Mainframe;
         public Page1(Frame frame)
         {
             Mainframe = frame;
             InitializeComponent();
+            DataContext = (MainWindow)Application.Current.MainWindow;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -37,23 +38,36 @@ namespace WpfApp4
         {
             Mainframe.GoBack();
         }
+        public void AuthorizeBlock()
+        {
+           ((MainWindow)Application.Current.MainWindow).AuthTry--;
+            if (!(((MainWindow)Application.Current.MainWindow).AuthTry == 0))
+            {
+                MessageBox.Show($"Неправильный логин или пароль, осталось {((MainWindow)Application.Current.MainWindow).AuthTry} попыток", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                MessageBox.Show("Неправильный логин или пароль, превышено количество попыток", "Блокировка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
 
         private void LoginBtn_Click(object sender, RoutedEventArgs e)
         {
+            
             var window = new RoleForAuthorizationWindow();
             if (window.ShowDialog() == true)
             {
                if (window.Role == "Runner")
                 {
                     var runner = context.Runners.Where(o => o.Email == Login.Text && o.Password == Password.Password).SingleOrDefault();
+                    
                     if (runner != null)
                     {
-                        MainWindow.Authorize(runner);
-                        
+                        MainWindow.Authorize(runner);  
                     }
                     else
                     {
-                        MessageBox.Show("Неправильный логин или пароль.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                        AuthorizeBlock();                     
                     }
                 }
                else if (window.Role == "Admin")
@@ -65,7 +79,7 @@ namespace WpfApp4
                     }
                     else
                     {
-                        MessageBox.Show("Неправильный логин или пароль.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                        AuthorizeBlock();
                     }
                 }
             }

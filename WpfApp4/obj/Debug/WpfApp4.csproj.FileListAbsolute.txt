@@ -105,3 +105,4 @@ C:\Users\loss0\Desktop\Study\Study\WpfApp4\obj\Debug\WpfApp4.pdb
 C:\Users\loss0\Desktop\Study\Study\WpfApp4\obj\Debug\RegistrationConfirm.g.cs
 C:\Users\loss0\Desktop\Study\Study\WpfApp4\obj\Debug\RegistrationConfirm.baml
 C:\Users\loss0\Desktop\Study\Study\WpfApp4\obj\Debug\WpfApp4.Migrations.InitialCreate.resources
+C:\Users\loss0\Desktop\Study\Study\WpfApp4\obj\Debug\GeneratedInternalTypeHelper.g.cs

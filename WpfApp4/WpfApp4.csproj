@@ -66,6 +66,7 @@
       <DependentUpon>AuthorizationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Context\Context.cs" />
+    <Compile Include="Converters\LoginEnabledConverter.cs" />
     <Compile Include="Migrations\202003211340381_InitialCreate.cs" />
     <Compile Include="Migrations\202003211340381_InitialCreate.designer.cs">
       <DependentUpon>202003211340381_InitialCreate.cs</DependentUpon>
